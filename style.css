@@ -10,7 +10,7 @@
 body {
     background: #f9f9f9;
     min-height: 100vh;
-    
+
 }
 
 header {
@@ -41,7 +41,8 @@ header {
     font-weight: 600;
 }
 
-.navigation a:hover,.navigation a.active {
+.navigation a:hover,
+.navigation a.active {
     background: #359381;
     color: #fff;
 }
@@ -74,7 +75,7 @@ header {
     position: relative;
     background: #003329;
     padding: 100px;
-    
+
 }
 
 #plant {
@@ -95,3 +96,154 @@ header {
     color: #fff;
     font-weight: 300;
 }
+
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    .logo {
+        margin-right: 100px;
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navigation a {
+        margin: 0 5px;
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        position: relative;
+        padding-top: 15px;
+      }
+      
+      .hamburger-menu {
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+      
+      .navigation {
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+        z-index: 999;
+      }
+      
+      .navigation a {
+        margin: 8px 0;
+        display: block;
+        text-align: center;
+        width: 80%;
+      }
+      
+      /* Additional styling for parallax on mobile */
+      .parallax img {
+        height: auto;
+        /* Ensure images scale properly */
+        object-fit: cover;
+      }
+      
+      /* Improve touch response */
+      body {
+        touch-action: manipulation;
+        -webkit-overflow-scrolling: touch;
+      }
+}
+
+@media screen and (max-height: 600px) {
+    .parallax {
+      height: 100vh; /* Force full height on landscape mobile */
+    }
+    
+    #text {
+      font-size: 7vw;
+    }
+  }
+
+/* Responsive Parallax Section */
+
+@media screen and (max-width: 768px) {
+    #text {
+        font-size: 8vw;
+        /* Increase text size for better visibility on smaller screens */
+    }
+
+    .parallax {
+        height: 80vh;
+        /* Slightly reduce height on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #text {
+        font-size: 10vw;
+        /* Even larger for mobile */
+    }
+
+    .parallax {
+        height: 70vh;
+    }
+}
+
+/* Responsive Text Section */
+@media screen and (max-width: 768px) {
+    .text {
+        padding: 50px 30px;
+    }
+
+    .text h2 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .text {
+        padding: 40px 20px;
+    }
+
+    .text h2 {
+        font-size: 1.5em;
+    }
+
+    .text p {
+        font-size: 0.9em;
+    }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+    header {
+      position: fixed;
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .parallax {
+      -webkit-transform: translateZ(0);
+    }
+  }
